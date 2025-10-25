@@ -20,7 +20,7 @@ const options = {
       description: 'Generated automatically via swagger-jsdoc',
     },
   },
-  apis: ['./api/**/*.ts'], // or .js if your routes use JS
+  apis: ['./src/controllers/*.ts', './src/models/*.ts', './src/routes/*.ts'], // Path to the API docs
 }
 
 const swaggerSpec = swaggerJsdoc(options)

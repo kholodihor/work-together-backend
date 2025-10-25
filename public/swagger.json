@@ -5,7 +5,20 @@
     "version": "1.0.0",
     "description": "Generated automatically via swagger-jsdoc"
   },
-  "paths": {},
+  "paths": {
+    "/api/users": {
+      "get": {
+        "tag": "Users",
+        "summary": "Retrieve a list of users",
+        "description": "This route returns users",
+        "responses": {
+          "200": {
+            "description": "List of users"
+          }
+        }
+      }
+    }
+  },
   "components": {},
   "tags": []
 }
