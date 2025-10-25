@@ -25,8 +25,14 @@ app.get('/', (_req, res) => {
 
 app.use("/api", userRoutes);
 
-app.listen(process.env.PORT || 4000, () => {
-  console.log(`Server running on port http://localhost:${process.env.PORT || 4000}`);
-})
+// Export for Vercel serverless
+export default app;
+
+// Only start server locally (not on Vercel)
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(process.env.PORT || 4000, () => {
+    console.log(`Server running on port http://localhost:${process.env.PORT || 4000}`);
+  });
+}
 
 
