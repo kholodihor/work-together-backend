@@ -1,5 +1,5 @@
 {
-  "name": "synth-api",
+  "name": "work-together",
   "version": "1.0.0",
   "description": "",
   "author": "",
@@ -11,6 +11,7 @@
     "dev": "nodemon",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
+    "prepare": "husky install",
     "generate:swagger": "node scripts/generate-swagger.js"
   },
   "dependencies": {
@@ -38,9 +39,16 @@
     "@types/swagger-jsdoc": "^6.0.4",
     "@types/swagger-ui-express": "^4.1.8",
     "eslint": "^9.38.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
     "nodemon": "^3.1.10",
     "swagger-jsdoc": "^6.2.8",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run generate:swagger"
+    }
   }
 }

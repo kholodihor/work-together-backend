@@ -1,0 +1,10 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "Running Swagger generation..."
+if ! npm run generate:swagger; then
+  echo "❌ Swagger generation failed. Push aborted."
+  exit 1
+fi
+
+echo "✅ Swagger generated successfully. Proceeding with push."

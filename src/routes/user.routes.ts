@@ -7,7 +7,7 @@ import { router } from './router'
  *   get:
  *     tag: Users
  *     summary: Retrieve a list of users
- *     description: This route returns users
+ *     description: This route returns list of users
  *     responses:
  *       200:
  *         description: List of users
