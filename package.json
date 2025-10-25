@@ -7,12 +7,14 @@
   "keywords": [],
   "main": "index.js",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "npm run generate:swagger && tsc -p tsconfig.json",
     "dev": "nodemon",
     "lint": "eslint",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix",
+    "generate:swagger": "node scripts/generate-swagger.js"
   },
   "dependencies": {
+    "@vercel/node": "^5.5.0",
     "axios": "^1.9.0",
     "bcrypt": "^6.0.0",
     "body-parser": "^2.2.0",
